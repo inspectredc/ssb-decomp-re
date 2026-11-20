@@ -79,6 +79,11 @@ public:
     void func_ovl8_80371EA0(void);
     void func_ovl8_80371ECC(UnkA1* arg1);
 
+    GObj* get48(void) { return this->unk48; }
+    void set48(GObj* arg1) { this->unk48 = arg1; }
+    Unk80372790* get4C(void) { return this->unk4C; }
+    void set4C(Unk80372790* arg1) { this->unk4C = arg1; }
+
 protected:
     u8 pad0[0x2];
     DBMenuPosition unk2;
