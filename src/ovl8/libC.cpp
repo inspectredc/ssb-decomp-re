@@ -1,4 +1,4 @@
-#include "common.h"
+#include "ovl8/libC.hpp"
 
 typedef struct Arena_s {
     Arena_s* prevBlock;
