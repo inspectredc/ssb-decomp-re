@@ -134,7 +134,7 @@ LD_MAP    := build/$(TARGET).$(VERSION).map
 IDO7            := tools/ido-recomp/7.1/cc
 IDO5            := tools/ido-recomp/5.3/cc
 IDO7_CPP        := tools/ido-recomp/7.1/NCC
-IDO7_IRIX4      := tools/ido-irix4/accom-cc
+
 AS              := $(BINUTILS_PREFIX)-as
 LD              := $(BINUTILS_PREFIX)-ld
 OBJCOPY         := $(BINUTILS_PREFIX)-objcopy
@@ -162,6 +162,10 @@ endif
 
 # Exclude relocData C files from normal compilation (they are compiled separately into binary blobs)
 C_FILES := $(filter-out $(wildcard src/relocData/*.c src/relocData/**/*.c),$(C_FILES))
+
+SRC_DIR = src
+SRC_DIRS := $(shell find $(SRC_DIR) -type d)
+CPP_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
 
 # relocData C-to-binary conversion - per-version manifest of converted files.
 # Only load the file list when RELOC_DATA=1; otherwise the extract-stamp
@@ -334,6 +338,7 @@ C_FILES   := $(filter-out $(SOUND_C_GENERATED),$(C_FILES))
 BIN_FILES := $(filter-out $(SOUND_BIN_GENERATED) $(FGM_BIN_GENERATED),$(BIN_FILES))
 
 O_FILES        := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
+                  $(foreach f,$(CPP_FILES:.cpp=.o),$(BUILD_DIR)/$f) \
                   $(foreach f,$(S_TEXT_FILES:.s=.o),$(BUILD_DIR)/$f) \
                   $(foreach f,$(S_DATA_FILES:.s=.o),$(BUILD_DIR)/$f) \
                   $(foreach f,$(S_RODATA_FILES:.s=.o),$(BUILD_DIR)/$f) \
@@ -343,12 +348,15 @@ O_FILES        := $(foreach f,$(C_FILES:.c=.o),$(BUILD_DIR)/$f) \
                   $(FGM_OS)
 
 TEXT_SECTION_FILES := $(foreach f,$(C_FILES:.c=.text),$(BUILD_DIR)/$f) \
+                      $(foreach f,$(CPP_FILES:.cpp=.text),$(BUILD_DIR)/$f) \
                       $(foreach f,$(S_TEXT_FILES:.s=.text),$(BUILD_DIR)/$f)
 
 DATA_SECTION_FILES := $(foreach f,$(C_FILES:.c=.data),$(BUILD_DIR)/$f) \
+                      $(foreach f,$(CPP_FILES:.cpp=.data),$(BUILD_DIR)/$f) \
                       $(foreach f,$(S_DATA_FILES:.s=.data),$(BUILD_DIR)/$f)
 
 RODATA_SECTION_FILES := $(foreach f,$(C_FILES:.c=.rodata),$(BUILD_DIR)/$f) \
+                        $(foreach f,$(CPP_FILES:.cpp=.rodata),$(BUILD_DIR)/$f) \
                         $(foreach f,$(S_RODATA_FILES:.s=.rodata),$(BUILD_DIR)/$f)
 
 # directory flags
@@ -359,22 +367,8 @@ $(BUILD_DIR)/src/libultra/debug/%.o: 	OPTFLAGS := -O1 -g0 -mips2
 $(BUILD_DIR)/src/libultra/host/%.o:	OPTFLAGS := -O1 -g0 -mips2
 
 # per file flags
-$(BUILD_DIR)/src/ovl8/ovl8_11.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_11.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_11_1.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_11_1.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_13_2.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_13_2.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_14.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_14.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_17.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_17.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_31.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_31.o: STRIP_EDG_SYM := 1
-$(BUILD_DIR)/src/ovl8/ovl8_8.o: CC := $(IDO7_IRIX4)
-$(BUILD_DIR)/src/ovl8/ovl8_8.o: CCFLAGS += -DIDO_IRIX4_C89=1
-$(BUILD_DIR)/src/ovl8/ovl8_8_2.o: CC := $(IDO7_CPP)
-$(BUILD_DIR)/src/ovl8/ovl8_8_2.o: STRIP_EDG_SYM := 1
+$(BUILD_DIR)/src/ovl8/%.o: CC := $(IDO7_CPP)
+$(BUILD_DIR)/src/ovl8/%.o: STRIP_EDG_SYM := 1
 $(BUILD_DIR)/src/libultra/n_audio/n_cspsetvol.o:	OPTFLAGS := -O3 -g0 -mips2
 $(BUILD_DIR)/src/libultra/n_audio/n_cspsetvol.o: CC := $(IDO7)
 $(BUILD_DIR)/src/libultra/n_audio/n_cspsetseq.o:	OPTFLAGS := -O3 -g0 -mips2
@@ -578,13 +572,13 @@ extract:
 
 	$(PYTHON) tools/relocData.py extractAll tools/relocFileDescriptions.$(VERSION).txt --version $(VERSION)
 	@mkdir -p relocAssets
-ifeq ($(VERSION),us)
-	@# halAssetTool's parser only accepts 3-digit file ids in the names section,
-	@# so strip names for file ids >= 1000 before passing the descriptions file in.
-	@mkdir -p $(BUILD_DIR)
-	sed '/^-[0-9][0-9][0-9][0-9]/d' tools/relocFileDescriptions.$(VERSION).txt > $(BUILD_DIR)/relocFileDescriptions.$(VERSION).halAssetTool.txt
-	tools/halAssetTool x $(BUILD_DIR)/relocFileDescriptions.$(VERSION).halAssetTool.txt assets/$(VERSION)/relocData/ relocAssets
-endif
+# ifeq ($(VERSION),us)
+# 	@# halAssetTool's parser only accepts 3-digit file ids in the names section,
+# 	@# so strip names for file ids >= 1000 before passing the descriptions file in.
+# 	@mkdir -p $(BUILD_DIR)
+# 	sed '/^-[0-9][0-9][0-9][0-9]/d' tools/relocFileDescriptions.$(VERSION).txt > $(BUILD_DIR)/relocFileDescriptions.$(VERSION).halAssetTool.txt
+# 	tools/halAssetTool x $(BUILD_DIR)/relocFileDescriptions.$(VERSION).halAssetTool.txt assets/$(VERSION)/relocData/ relocAssets
+# endif
 
 init:
 	${MAKE} clean VERSION=$(VERSION)
@@ -663,6 +657,18 @@ endif
 	$(V)$(CC) $(CCFLAGS) $(OPTFLAGS) -o $@ $< 2>&1 | $(PYTHON) tools/colorizeIDO.py
 # patch object files compiled with mips3 to be able to link them
 	$(V)$(PYTHON) tools/patchMips3Objects.py $@
+# the EDG C++ frontend (NCC) emits a local UNDEFINED version symbol that modern ld rejects
+	$(if $(STRIP_EDG_SYM),$(V)$(OBJCOPY) -w --strip-symbol='__edg_version_sym_*' $@)
+
+# Source C++ files
+$(BUILD_DIR)/%.o: %.cpp
+	$(call print_3,Compiling:,$<,$@)
+	@mkdir -p $(@D)
+# compile and pipe through colorizer
+	$(V)$(CC) $(CCFLAGS) $(OPTFLAGS) -o $@ $< 2>&1 | $(PYTHON) tools/colorizeIDO.py
+# patch object files compiled with mips3 to be able to link them
+	$(V)$(PYTHON) tools/patchMips3Objects.py $@
+	$(V)$(OBJCOPY) --remove-section=.options --remove-section=.reginfo --remove-section=.mdebug $@
 # the EDG C++ frontend (NCC) emits a local UNDEFINED version symbol that modern ld rejects
 	$(if $(STRIP_EDG_SYM),$(V)$(OBJCOPY) -w --strip-symbol='__edg_version_sym_*' $@)
 

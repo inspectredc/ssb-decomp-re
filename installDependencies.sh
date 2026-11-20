@@ -38,10 +38,10 @@ then
 	fi
 fi
 
-git submodule update --init --recursive
+# git submodule update --init --recursive
 python3 -m pip install -r ./tools/splat/requirements.txt
 python3 -m pip install charset-normalizer -U
-TARGET_SPIMDISASM_VERSION=1.35.0
+TARGET_SPIMDISASM_VERSION=1.42.1
 [ "$(python3 -m spimdisasm --version)" = "${TARGET_SPIMDISASM_VERSION}" ] || python3 -m pip install --force-reinstall -v "spimdisasm==${TARGET_SPIMDISASM_VERSION}"
 
 if [ ! -f ./baserom.us.z64 ]
@@ -70,13 +70,13 @@ fi
 # cannot produce the ROM. The package bundles its own native qemu-irix, so it
 # is x86-64 Linux only for now. Failure is reported at the end rather than
 # here, so the remaining tools still get installed.
-irix4Failed=""
-if [ "$DETECTED_OS" = "linux" ] && [ "$(uname -m)" = "x86_64" ]
-then
-	./tools/ido-irix4/provision.sh || irix4Failed="provisioning failed"
-else
-	irix4Failed="only packaged for x86-64 Linux"
-fi
+# irix4Failed=""
+# if [ "$DETECTED_OS" = "linux" ] && [ "$(uname -m)" = "x86_64" ]
+# then
+# 	./tools/ido-irix4/provision.sh || irix4Failed="provisioning failed"
+# else
+# 	irix4Failed="only packaged for x86-64 Linux"
+# fi
 if [ ! -f "tools/vpk0cmd" ]
 then
 	[ "$DETECTED_OS" = "linux" ] && curl https://github.com/santaclose/vpk0cmd/releases/download/0.1/vpk0cmd_linux_x86_64 -L --output tools/vpk0cmd

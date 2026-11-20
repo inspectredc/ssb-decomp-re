@@ -1780,74 +1780,75 @@ segments:
     bss_size: 0x1580
     exclusive_ram_id: overlay_80371460
     subsegments:
-      - [0x18DCB0, c, ovl8/ovl8_0]
-      - [0x18DFE0, c, ovl8/ovl8_1]
-      - [0x18DFF0, c, ovl8/ovl8_2]
-      - [0x18E800, c, ovl8/ovl8_3]
-      - [0x18EFE0, c, ovl8/ovl8_4]
-      - [0x18FBA0, c, ovl8/ovl8_5]
-      - [0x190CB0, c, ovl8/ovl8_6]
-      - [0x192100, c, ovl8/ovl8_6_1]
-      - [0x192D80, c, ovl8/ovl8_7]
-      - [0x1933B0, c, ovl8/ovl8_8]
-      - [0x197210, c, ovl8/ovl8_8_2]
-      - [0x198B20, c, ovl8/ovl8_9]
-      - [0x198C10, c, ovl8/ovl8_10]
-      - [0x198EB0, c, ovl8/ovl8_11]
-      - [0x1992B0, c, ovl8/ovl8_11_1]
-      - [0x199690, c, ovl8/ovl8_12]
+      - [0x18DCB0, cpp, ovl8/libC]
+      - [0x18DFE0, asm, ovl8/ovl8_1]
+      - [0x18DFF0, asm, ovl8/ovl8_2]
+      - [0x18E800, asm, ovl8/ovl8_3]
+      - [0x18EFE0, asm, ovl8/ovl8_4]
+      - [0x18FBA0, asm, ovl8/ovl8_5]
+      - [0x190CB0, asm, ovl8/ovl8_6]
+      - [0x192100, asm, ovl8/ovl8_6_1]
+      - [0x192D80, asm, ovl8/ovl8_7]
+      - [0x1933B0, asm, ovl8/ovl8_8]
+      - [0x197210, asm, ovl8/ovl8_8_2]
+      - [0x198B20, asm, ovl8/ovl8_9]
+      - [0x198C10, asm, ovl8/ovl8_10]
+      - [0x198EB0, asm, ovl8/ovl8_11]
+      - [0x1992B0, asm, ovl8/ovl8_11_1]
+      - [0x199690, asm, ovl8/ovl8_12]
       - [0x199840, pad, pad0x199840]
-      - [0x199850, c, ovl8/ovl8_13]
-      - [0x19A5B0, c, ovl8/ovl8_13_2]
-      - [0x19B650, c, ovl8/ovl8_14]
-      - [0x19BB50, c, ovl8/ovl8_15]
-      - [0x19D710, c, ovl8/ovl8_16]
-      - [0x19D980, c, ovl8/ovl8_17]
-      - [0x19E3C0, c, ovl8/ovl8_18]
-      - [0x19E900, c, ovl8/ovl8_19]
-      - [0x19EF60, c, ovl8/ovl8_20]
-      - [0x19F330, c, ovl8/ovl8_21]
-      - [0x19F5E0, c, ovl8/ovl8_22]
+      - [0x199850, asm, ovl8/ovl8_13]
+      - [0x19A5B0, asm, ovl8/ovl8_13_2]
+      - [0x19B650, asm, ovl8/ovl8_14]
+      - [0x19BB50, asm, ovl8/ovl8_15]
+      - [0x19D710, asm, ovl8/ovl8_16]
+      - [0x19D980, asm, ovl8/ovl8_17]
+      - [0x19E3C0, asm, ovl8/ovl8_18]
+      - [0x19E900, asm, ovl8/ovl8_19]
+      - [0x19EF60, asm, ovl8/ovl8_20]
+      - [0x19F330, asm, ovl8/ovl8_21]
+      - [0x19F5E0, asm, ovl8/ovl8_22]
       - [0x19FBE0, pad, ovl8nops]
-      - [0x19FBF0, c, ovl8/ovl8_23]
-      - [0x1A0910, c, ovl8/ovl8_24]
-      - [0x1A0CB0, c, ovl8/ovl8_25]
-      - [0x1A19D0, c, ovl8/ovl8_26]
-      - [0x1A1CB0, c, ovl8/ovl8_27]
-      - [0x1A1E90, c, ovl8/ovl8_28]
-      - [0x1A22A0, c, ovl8/ovl8_29]
-      - [0x1A2660, c, ovl8/ovl8_30]
-      - [0x1A2D90, c, ovl8/ovl8_31]
-      - [0x1A41F0, c, ovl8/ovl8_32]
-      - [0x1A44F0, .data, ovl8/ovl8_8]
-      - [0x1A4790, .data, ovl8/ovl8_9]
-      - [0x1A69F0, .data, ovl8/ovl8_10]
-      - [0x1A6A20, .data, ovl8/ovl8_11]
-      - [0x1A6F50, .data, ovl8/ovl8_12]
-      - [0x1A70B0, .data, ovl8/ovl8_13]
-      - [0x1A7350, .data, ovl8/ovl8_13_2]
-      - [0x1A73C0, .data, ovl8/ovl8_14]
-      - [0x1A7620, .data, ovl8/ovl8_15]
-      - [0x1A8220, .data, ovl8/ovl8_16]
-      - [0x1A8480, .data, ovl8/ovl8_17]
-      - [0x1A8560, .data, ovl8/ovl8_18]
-      - [0x1A8570, .data, ovl8/ovl8_19]
-      - [0x1A8A10, .data, ovl8/ovl8_20]
-      - [0x1A8D30, .data, ovl8/ovl8_21]
-      - [0x1A8FE0, .data, ovl8/ovl8_22]
-      - [0x1A9260, .data, ovl8/ovl8_23]
-      - [0x1A95E0, .data, ovl8/ovl8_24]
-      - [0x1A9920, .data, ovl8/ovl8_25]
-      - [0x1A9EA0, .data, ovl8/ovl8_26]
-      - [0x1AA1B0, .data, ovl8/ovl8_27]
-      - [0x1AA450, .data, ovl8/ovl8_28]
-      - [0x1AA710, .data, ovl8/ovl8_29]
-      - [0x1AAA30, .data, ovl8/ovl8_30]
-      - [0x1AADF0, .data, ovl8/ovl8_31]
-      - [0x1AB330, .data, ovl8/ovl8_32]
-      - [0x1AB650, .rodata, ovl8/ovl8_8]
-      - [0x1AB6A0, .rodata, ovl8/ovl8_31]
-      - { start: 0x1AB6B0, type: bss, name: ovl8/ovl8_bss, vram: 0x8038EE60 }
+      - [0x19FBF0, asm, ovl8/ovl8_23]
+      - [0x1A0910, asm, ovl8/ovl8_24]
+      - [0x1A0CB0, asm, ovl8/ovl8_25]
+      - [0x1A19D0, asm, ovl8/ovl8_26]
+      - [0x1A1CB0, asm, ovl8/ovl8_27]
+      - [0x1A1E90, asm, ovl8/ovl8_28]
+      - [0x1A22A0, asm, ovl8/ovl8_29]
+      - [0x1A2660, asm, ovl8/ovl8_30]
+      - [0x1A2D90, asm, ovl8/ovl8_31]
+      - [0x1A41F0, asm, ovl8/ovl8_32]
+      - [0x1A44F0, data, ovl8/ovl8_8]
+      - [0x1A4790, data, ovl8/ovl8_9]
+      - [0x1A69F0, data, ovl8/ovl8_10]
+      - [0x1A6A20, data, ovl8/ovl8_11]
+      - [0x1A6F50, data, ovl8/ovl8_12]
+      - [0x1A70B0, data, ovl8/ovl8_13]
+      - [0x1A7350, data, ovl8/ovl8_13_2]
+      - [0x1A73C0, data, ovl8/ovl8_14]
+      - [0x1A7620, data, ovl8/ovl8_15]
+      - [0x1A8220, data, ovl8/ovl8_16]
+      - [0x1A8480, data, ovl8/ovl8_17]
+      - [0x1A8560, data, ovl8/ovl8_18]
+      - [0x1A8570, data, ovl8/ovl8_19]
+      - [0x1A8A10, data, ovl8/ovl8_20]
+      - [0x1A8D30, data, ovl8/ovl8_21]
+      - [0x1A8FE0, data, ovl8/ovl8_22]
+      - [0x1A9260, data, ovl8/ovl8_23]
+      - [0x1A95E0, data, ovl8/ovl8_24]
+      - [0x1A9920, data, ovl8/ovl8_25]
+      - [0x1A9EA0, data, ovl8/ovl8_26]
+      - [0x1AA1B0, data, ovl8/ovl8_27]
+      - [0x1AA450, data, ovl8/ovl8_28]
+      - [0x1AA710, data, ovl8/ovl8_29]
+      - [0x1AAA30, data, ovl8/ovl8_30]
+      - [0x1AADF0, data, ovl8/ovl8_31]
+      - [0x1AB330, data, ovl8/ovl8_32]
+      - [0x1AB650, rodata, ovl8/ovl8_8]
+      - [0x1AB6A0, rodata, ovl8/ovl8_31]
+      - { type: .bss, name: ovl8/libC, vram: 0x8038EE60 }
+      - { type: bss, name: ovl8/ovl8_bss, vram: 0x8038EE90 }
 
   - name: ovl9
     type: code
@@ -1873,14 +1874,14 @@ segments:
   - name: efcommon_scb
     type: code
     start: 0xAC7340
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xAC7340, .rodata, particles/efcommon_scb]
   - name: efcommon_txb
     type: code
     start: 0xAC9DE0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xAC9DE0, .rodata, particles/efcommon_txb]
@@ -1888,14 +1889,14 @@ segments:
   - name: particles_unk0_scb
     type: code
     start: 0xB16C80
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB16C80, .rodata, particles/particles_unk0_scb]
   - name: particles_unk0_txb
     type: code
     start: 0xB17060
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB17060, .rodata, particles/particles_unk0_txb]
@@ -1903,14 +1904,14 @@ segments:
   - name: particles_unk1_scb
     type: code
     start: 0xB174A0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB174A0, .rodata, particles/particles_unk1_scb]
   - name: particles_unk1_txb
     type: code
     start: 0xB176A0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB176A0, .rodata, particles/particles_unk1_txb]
@@ -1918,14 +1919,14 @@ segments:
   - name: particles_unk2_scb
     type: code
     start: 0xB19700
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB19700, .rodata, particles/particles_unk2_scb]
   - name: particles_unk2_txb
     type: code
     start: 0xB19850
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB19850, .rodata, particles/particles_unk2_txb]
@@ -1933,14 +1934,14 @@ segments:
   - name: itcommon_scb
     type: code
     start: 0xB1BCA0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1BCA0, .rodata, particles/itcommon_scb]
   - name: itcommon_txb
     type: code
     start: 0xB1BDE0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1BDE0, .rodata, particles/itcommon_txb]
@@ -1948,14 +1949,14 @@ segments:
   - name: grpupupu_scb
     type: code
     start: 0xB1E640
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1E640, .rodata, particles/grpupupu_scb]
   - name: grpupupu_txb
     type: code
     start: 0xB1E7E0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1E7E0, .rodata, particles/grpupupu_txb]
@@ -1963,14 +1964,14 @@ segments:
   - name: grhyrule_scb
     type: code
     start: 0xB1F960
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1F960, .rodata, particles/grhyrule_scb]
   - name: grhyrule_txb
     type: code
     start: 0xB1FC80
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB1FC80, .rodata, particles/grhyrule_txb]
@@ -1978,14 +1979,14 @@ segments:
   - name: gryoster_scb
     type: code
     start: 0xB22980
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB22980, .rodata, particles/gryoster_scb]
   - name: gryoster_txb
     type: code
     start: 0xB22A00
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB22A00, .rodata, particles/gryoster_txb]
@@ -1993,14 +1994,14 @@ segments:
   - name: mntitle_scb
     type: code
     start: 0xB22C30
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB22C30, .rodata, particles/mntitle_scb]
   - name: mntitle_txb
     type: code
     start: 0xB22D40
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: particles
     subsegments:
       - [0xB22D40, .rodata, particles/mntitle_txb]
@@ -2009,14 +2010,14 @@ segments:
   - name: S1_music_sbk
     type: code
     start: 0xB277B0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: audio
     subsegments:
       - [0xB277B0, .rodata, audio/S1_music_sbk]
   - name: B1_sounds1_ctl
     type: code
     start: 0xB4E5C0
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: audio
     subsegments:
       - [0xB4E5C0, .rodata, audio/B1_sounds1_ctl]
@@ -2026,7 +2027,7 @@ segments:
   - name: B1_sounds2_ctl
     type: code
     start: 0xC6B650
-    vram: 0x0
+    vram: 0x999990
     exclusive_ram_id: audio
     subsegments:
       - [0xC6B650, .rodata, audio/B1_sounds2_ctl]
