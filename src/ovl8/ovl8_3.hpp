@@ -1,3 +1,6 @@
+#ifndef _OVL8_3_H
+#define _OVL8_3_H
+
 #include "ovl8/ovl8_2.hpp"
 
 class Unk80371FB0 : virtual public ovl8_803717E0 {
@@ -25,3 +28,5 @@ protected:
 
     static const SYColorRGBA D_ovl8_80388C98;
 };
+
+#endif // _OVL8_3_H

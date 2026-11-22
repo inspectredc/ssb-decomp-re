@@ -1,3 +1,6 @@
+#ifndef _OVL8_2_H
+#define _OVL8_2_H
+
 #include "ovl8/libC.hpp"
 extern "C" {
 #include <sys/objtypes.h>
@@ -26,6 +29,7 @@ typedef struct UnkA1 {
     u16 unk10;
     s32 unk14;
     s32 unk18;
+    s16 unk1C;
 } UnkA1;
 
 class ovl8_803717E0 {
@@ -84,7 +88,6 @@ public:
     Unk80372790* get4C(void) { return this->unk4C; }
     void set4C(Unk80372790* arg1) { this->unk4C = arg1; }
 
-protected:
     u8 pad0[0x2];
     DBMenuPosition unk2;
     u8 padA[0x2];
@@ -172,17 +175,16 @@ public:
     virtual void func_ovl8_80373BC0(s32 arg1, s32 arg2, s32 arg3, Vec2h* arg4);
     virtual void func_ovl8_80373BD4(s32 arg1, s32 arg2, s32 arg3, Vec2h* arg4);
 
-protected:
-    f32 unk0;
-    f32 unk4_2;
-    f32 unk8;
-    char unkC_2[1];
+    f32 ovl85unk0;
+    f32 ovl85unk4;
+    f32 ovl85unk8;
+    char ovl85unkC[1];
     u8 padD[0x11];
-    s16 unk1E;
-    f32 unk20;
-    Unk80372790_Unk28* unk24;
-    Unk80372790_Unk28* unk28;
-    void (*unk2C_2)(Unk80372790_Unk28*);
+    s16 ovl85unk1E;
+    f32 ovl85unk20;
+    Unk80372790_Unk28* ovl85unk24;
+    Unk80372790_Unk28* ovl85unk28;
+    void (*ovl85unk2C)(Unk80372790_Unk28*);
 };
 
 class Unk80372790 : public Unk803751C0 {
@@ -192,9 +194,6 @@ public:
     Unk80372790* func_ovl8_80372908(UnkA1* arg1);
     virtual ~Unk80372790();
 
-    virtual void func_ovl8_80375528(void);
-    virtual void func_ovl8_803755C4(void);
-    virtual void func_ovl8_80375864(void);
     virtual s32 func_ovl8_80372A3C(void);
     virtual void func_ovl8_80372A48(Unk80372790_Unk28* arg1);
     virtual void func_ovl8_80371ACC(s32 arg1);
@@ -220,7 +219,7 @@ public:
     Unk80372790_Unk28* func_ovl8_80373168(void);
     Unk80372790_Unk28* func_ovl8_8037319C(s32 arg1);
     Unk80372790_Unk28* func_ovl8_80373218(Vec2h arg1);
-    virtual void func_ovl8_80371E2C(void);
+    virtual void func_ovl8_80371E1C(void);
     void func_ovl8_80373308(UnkA1* arg1);
 
 
@@ -232,3 +231,5 @@ protected:
 };
 
 extern "C" s32 func_ovl8_80377168(Vec2h, DBMenuPosition*);
+
+#endif // _OVL8_2_H

@@ -1,3 +1,6 @@
+#ifndef _OVL8_3_2_H
+#define _OVL8_3_2_H
+
 #include "ovl8/ovl8_3.hpp"
 
 class Unk80372430 : public Unk80371FB0 {
@@ -10,3 +13,5 @@ class Unk80372430 : public Unk80371FB0 {
 
     void func_ovl8_8037277C(void);
 };
+
+#endif // _OVL8_3_2_H
