@@ -73,7 +73,7 @@ void ovl8_803717E0::func_ovl8_80371ABC() {}
 
 void ovl8_803717E0::func_ovl8_80371AC4() {}
 
-void ovl8_803717E0::func_ovl8_80371ACC(s32 /* arg1 */) {}
+void ovl8_803717E0::func_ovl8_80371ACC(GObj* /* arg1 */) {}
 
 void ovl8_803717E0::func_ovl8_80371AD8(Vec2h* arg1)
 {

@@ -47,7 +47,7 @@ Unk80372790::~Unk80372790()
 	}
 }
 
-s32 Unk80372790::func_ovl8_80372A3C() { return 0; }
+GObj* Unk80372790::func_ovl8_80372A3C() { return NULL; }
 
 void Unk80372790::func_ovl8_80372A48(Unk80372790_Unk28* arg1)
 {
@@ -70,7 +70,7 @@ void Unk80372790::func_ovl8_80372A48(Unk80372790_Unk28* arg1)
 
 extern s32 D_ovl8_8038A1BC;
 
-void Unk80372790::func_ovl8_80371ACC(s32 arg1)
+void Unk80372790::func_ovl8_80371ACC(GObj* /* arg1 */)
 {
 	menuCursorStruct sp1C;
 
@@ -110,9 +110,6 @@ void Unk80372790::func_ovl8_80372C00()
 {
 	Vec2h sp34;
 	Vec2h sp30;
-	void* temp_s0;
-	void* var_s0;
-	void* var_s0_2;
 
 	func_ovl8_8037726C(&sp30);
 	while (func_ovl8_80377244() & this->unk30)
@@ -148,7 +145,6 @@ void Unk80372790::func_ovl8_80371DC0(s16 arg1, s16 arg2) {}
 void Unk80372790::func_ovl8_80371DFC(void)
 {
 	Unk80372790_Unk28* temp_v0;
-	Unk80372790_Unk28* var_v1;
 
 	temp_v0 = func_ovl8_80373160();
 	if (temp_v0)
@@ -239,7 +235,7 @@ s32 Unk80372790::func_ovl8_80373044(menuCursorStruct* arg1)
 	return 0;
 }
 
-s32 Unk80372790::func_ovl8_8037C344(s32 arg1, Unk80372790* arg2)
+s32 Unk80372790::func_ovl8_8037C344(s32 arg1, void* arg2)
 {
 	if (this->unk24 != NULL)
 	{
@@ -252,7 +248,7 @@ void Unk80372790::func_ovl8_80371DD0() { ovl8_803717E0::func_ovl8_80371DD0(); }
 
 void Unk80372790::func_ovl8_80371DDC() { ovl8_803717E0::func_ovl8_80371DDC(); }
 
-void Unk80372790::func_ovl8_80373158(s32 (*arg1)(s32, Unk80372790*)) { this->unk24 = arg1; }
+void Unk80372790::func_ovl8_80373158(s32 (*arg1)(s32, void*)) { this->unk24 = arg1; }
 
 Unk80372790_Unk28* Unk80372790::func_ovl8_80373160() { return this->unk28; }
 

@@ -22,9 +22,9 @@ public:
     void func_ovl8_80372420(Sprite* arg0);
 
 protected:
-    GObj* unk0;
-    GObj* unk4;
-    Sprite* unk8;
+    GObj* ovl83unk0;
+    GObj* ovl83unk4;
+    Sprite* ovl83unk8;
 
     static const SYColorRGBA D_ovl8_80388C98;
 };

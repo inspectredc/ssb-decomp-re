@@ -24,12 +24,14 @@ typedef struct DBMenuPosition {
 
 typedef struct UnkA1 {
     DBMenuPosition unk0;
-    Vec2h unk8;
+    SYColorRGBA unk8;
     SYColorRGBA unkC;
     u16 unk10;
     s32 unk14;
     s32 unk18;
     s16 unk1C;
+    u8 pad20[0x20];
+    Sprite* unk24;
 } UnkA1;
 
 class ovl8_803717E0 {
@@ -51,7 +53,7 @@ public:
     virtual void func_ovl8_80371A2C(void);
     virtual void func_ovl8_80371ABC(void);
     virtual void func_ovl8_80371AC4(void);
-    virtual void func_ovl8_80371ACC(s32 arg1);
+    virtual void func_ovl8_80371ACC(GObj* arg1);
     virtual void func_ovl8_80371AD8(Vec2h* arg1);
     virtual s32 func_ovl8_80371B34(Vec2h* arg1);
     virtual s32 func_ovl8_80371B98(Vec2h* arg1);
@@ -93,7 +95,7 @@ public:
     u8 padA[0x2];
     s32 unkC;
     s32 unk10;
-    Vec2h unk14;
+    SYColorRGBA unk14;
     SYColorRGBA unk18;
     s32 unk1C;
     s32 unk20;
@@ -120,8 +122,8 @@ public:
     Unk8037C2D0();
     virtual ~Unk8037C2D0();
 
-    virtual s32 func_ovl8_8037C344(s32 arg1, Unk80372790* arg2);
-    virtual s32 func_ovl8_8037C358(s32 arg1, Unk80372790_Unk28* arg2);
+    virtual s32 func_ovl8_8037C344(s32 arg1, void* arg2);
+    virtual s32 func_ovl8_8037C358(s32 arg1, void* arg2);
     void func_ovl8_8037C3AC(ovl8_803717E0* arg1);
     
 protected:
@@ -194,9 +196,9 @@ public:
     Unk80372790* func_ovl8_80372908(UnkA1* arg1);
     virtual ~Unk80372790();
 
-    virtual s32 func_ovl8_80372A3C(void);
+    virtual GObj* func_ovl8_80372A3C(void);
     virtual void func_ovl8_80372A48(Unk80372790_Unk28* arg1);
-    virtual void func_ovl8_80371ACC(s32 arg1);
+    virtual void func_ovl8_80371ACC(GObj* arg1);
     virtual void func_ovl8_80371ABC(void);
     virtual s32 func_ovl8_80371C1C(menuCursorStruct* arg1);
     s32 func_ovl8_80372B98(menuCursorStruct* arg1);
@@ -211,10 +213,10 @@ public:
     void func_ovl8_80372F04(void);
     virtual void func_ovl8_80372FEC(void);
     virtual s32 func_ovl8_80373044(menuCursorStruct* arg1);
-    virtual s32 func_ovl8_8037C344(s32, Unk80372790*);
+    virtual s32 func_ovl8_8037C344(s32, void*);
     virtual void func_ovl8_80371DD0(void);
     virtual void func_ovl8_80371DDC(void);
-    void func_ovl8_80373158(s32 (*arg1)(s32, Unk80372790*));
+    void func_ovl8_80373158(s32 (*arg1)(s32, void*));
     Unk80372790_Unk28* func_ovl8_80373160(void);
     Unk80372790_Unk28* func_ovl8_80373168(void);
     Unk80372790_Unk28* func_ovl8_8037319C(s32 arg1);
@@ -225,7 +227,7 @@ public:
 
 protected:
 // 0x24 start
-    s32 (*unk24)(s32 arg1, Unk80372790* arg2);
+    s32 (*unk24)(s32 arg1, void* arg2);
     Unk80372790_Unk28* unk28;
     u8 pad8[0xC];
 };
