@@ -74,7 +74,9 @@ void Unk80372790_Unk28::func_ovl8_80373694(f32 arg1)
 	}
 }
 
-void Unk80372790_Unk28::func_ovl8_80373750(f32 arg1) { this->func_ovl8_80373694(this->ovl85unk0 + arg1); }
+void Unk80372790_Unk28::func_ovl8_80373750(f32 arg1) {
+    this->func_ovl8_80373694(this->ovl85unk0 + arg1);
+}
 
 void Unk80372790_Unk28::func_ovl8_80373790(f32 arg1)
 {

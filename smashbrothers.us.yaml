@@ -1795,7 +1795,7 @@ segments:
       - [0x1933B0, asm, ovl8/ovl8_8]
       - [0x197210, asm, ovl8/ovl8_8_2]
       - [0x198B20, cpp, ovl8/ovl8_9]
-      - [0x198C10, asm, ovl8/ovl8_10]
+      - [0x198C10, cpp, ovl8/ovl8_10]
       - [0x198EB0, asm, ovl8/ovl8_11]
       - [0x1992B0, asm, ovl8/ovl8_11_1]
       - [0x199690, asm, ovl8/ovl8_12]
@@ -1834,7 +1834,7 @@ segments:
       - [0x1A64E0, .data, ovl8/ovl8_7]
       - [0x1A6780, data, ovl8/ovl8_8_2]
       - [0x1A69C0, .data, ovl8/ovl8_9]
-      - [0x1A69F0, data, ovl8/ovl8_10]
+      - [0x1A69F0, .data, ovl8/ovl8_10]
       - [0x1A6A20, data, ovl8/ovl8_11]
       - [0x1A6F50, data, ovl8/ovl8_12]
       - [0x1A70B0, data, ovl8/ovl8_13]
@@ -1862,6 +1862,8 @@ segments:
       - [0x1AB6A0, rodata, ovl8/1AB6A0]
       - { type: .bss, name: ovl8/libC, vram: 0x8038EE60 }
       - { type: bss, name: ovl8/ovl8_bss, vram: 0x8038EE90 }
+      - { type: .bss, name: ovl8/ovl8_10, vram: 0x8038EFD0 }
+      - { type: bss, name: ovl8/ovl8_bss2, vram: 0x8038EFE0 }
 
   - name: ovl9
     type: code

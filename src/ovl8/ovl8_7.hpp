@@ -1,6 +1,8 @@
+#ifndef _OVL8_7_H
+#define _OVL8_7_H
+
 #include "ovl8_2.hpp"
 #include "ovl8_3.hpp"
-#include "ovl8_3_2.hpp"
 
 class Unk80376530 : public Unk80372790, public Unk80371FB0 {
 public:
@@ -18,3 +20,5 @@ public:
 
     Sprite* unkA8;
 };
+
+#endif // _OVL8_7_H

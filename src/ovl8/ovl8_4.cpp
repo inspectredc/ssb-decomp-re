@@ -1,4 +1,5 @@
 #include "ovl8/ovl8_2.hpp"
+#include "ovl8/ovl8_10.hpp"
 extern "C"
 {
 #include <sys/objhelper.h>
@@ -11,8 +12,6 @@ extern "C" menuCursorStruct* func_ovl8_8037D434(menuCursorStruct*);
 extern "C" void func_ovl8_8037726C(Vec2h*);
 extern "C" u32 func_ovl8_80377244(void);
 extern "C" void func_ovl8_8037D45C(void);
-extern "C" GObj* func_ovl8_8037C584(s32 arg0);
-extern "C" void func_ovl8_8037C518(GObj* arg0, u8 arg1, s32 arg2);
 
 Unk80372790::Unk80372790() { func_ovl8_80373308(0); }
 
@@ -68,14 +67,12 @@ void Unk80372790::func_ovl8_80372A48(Unk80372790_Unk28* arg1)
 	}
 }
 
-extern s32 D_ovl8_8038A1BC;
-
 void Unk80372790::func_ovl8_80371ACC(GObj* /* arg1 */)
 {
 	menuCursorStruct sp1C;
 
 	ovl8_803717E0::func_ovl8_80371E2C();
-	if ((D_ovl8_8038A1BC == 0) && (func_ovl8_8037D384() != 0))
+	if ((Unk8037C3C0::D_ovl8_8038A1BC == 0) && (func_ovl8_8037D384() != 0))
 	{
 		func_ovl8_8037D3AC(&sp1C);
 		if (sp1C.button_tap & this->unk30)
@@ -178,20 +175,20 @@ s32 Unk80372790::func_ovl8_80372E98()
 
 	var_v1 = (this->unk48->id == -0x1FD) ? 0 : 1;
 
-	return func_ovl8_8037C584(var_v1) == this->unk48;
+	return Unk8037C3C0::func_ovl8_8037C584(var_v1) == this->unk48;
 }
 
 void Unk80372790::func_ovl8_80372F04()
 {
 	if (this->unk48->id == -0x1FC)
 	{
-		func_ovl8_8037C518(this->unk48, 0x1F, 2);
+		Unk8037C3C0::func_ovl8_8037C518(this->unk48, 0x1F, 2);
 		// somthing wrong here?
 		func_8000A24C((GObj*)this->unk48->camera_tag, 1);
 	}
 	else
 	{
-		func_ovl8_8037C518(this->unk48, 0x1F, 1);
+		Unk8037C3C0::func_ovl8_8037C518(this->unk48, 0x1F, 1);
 		// somthing wrong here?
 		func_8000A24C((GObj*)this->unk48->camera_tag, 2);
 	}

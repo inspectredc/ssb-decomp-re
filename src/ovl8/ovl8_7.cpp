@@ -1,6 +1,3 @@
-#ifndef _OVL8_7_H
-#define _OVL8_7_H
-
 #include "ovl8/ovl8_7.hpp"
 
 extern "C" void func_ovl8_8037B3E4(Sprite*);
@@ -136,5 +133,3 @@ void Unk80376530::func_ovl8_80372FEC(void) {
         temp_v0 = temp_v0->ovl85unk28;
     }
 }
-
-#endif // _OVL8_7_H

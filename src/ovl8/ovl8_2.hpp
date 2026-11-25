@@ -30,7 +30,7 @@ typedef struct UnkA1 {
     s32 unk14;
     s32 unk18;
     s16 unk1C;
-    u8 pad20[0x20];
+    u8 pad20[0x4];
     Sprite* unk24;
 } UnkA1;
 
