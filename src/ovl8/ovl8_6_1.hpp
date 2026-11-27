@@ -4,6 +4,7 @@
 #include "ovl8/ovl8_2.hpp"
 #include "ovl8/ovl8_3.hpp"
 #include "ovl8/ovl8_3_2.hpp"
+#include "ovl8/ovl8_4.hpp"
 
 typedef struct Vec2hPair {
     Vec2h unk0;

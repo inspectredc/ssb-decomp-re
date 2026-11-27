@@ -1,4 +1,5 @@
 #include "ovl8/ovl8_3_2.hpp"
+#include "ovl8/ovl8_4.hpp"
 
 Unk80372430::Unk80372430() { func_ovl8_8037277C(); }
 

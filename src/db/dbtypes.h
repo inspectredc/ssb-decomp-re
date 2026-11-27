@@ -7,21 +7,36 @@
 
 #include "dbdef.h"
 
-struct DBFontPadding
-{
+typedef struct DBFontPadding {
     u8 left_padding;
     u8 right_padding;
-};
+} DBFontPadding;
 
-struct DBFont
-{
-	u16 unk_dbfont_0x0;
+typedef struct DBFont {
+	u16 unk0;
 	u16 width;
 	u16 height;
-	DBFontPadding *padding;
+	DBFontPadding* unk8;
 	u8 bits_per_pixel;
-	u8 *glyphs;
-};
+	u32* unk10;
+} DBFont;
+
+typedef struct Unk8038F020 {
+	u8 pad0[0x2];
+	u16 width;
+	u16 height;
+	u8 pad6[0x2];
+	u8 bits_per_pixel;
+    u8* unkC;
+} Unk8038F020;
+
+typedef struct Unk8038FB90 {
+    s32 unk0;
+    SYColorRGBA unk4;
+    SYColorRGBA unk8;
+    s32 unkC;
+    s32 unk10;
+} Unk8038FB90;
 
 struct DBMenuOption
 {

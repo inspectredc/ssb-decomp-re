@@ -1,17 +1,15 @@
 #include "ovl8/ovl8_2.hpp"
+#include "ovl8/ovl8_4.hpp"
 #include "ovl8/ovl8_10.hpp"
+#include "ovl8/ovl8_13.hpp"
 extern "C"
 {
 #include <sys/objhelper.h>
 #include <sys/objman.h>
 }
 
-extern "C" s32 func_ovl8_8037D384(void);
-extern "C" menuCursorStruct* func_ovl8_8037D3AC(menuCursorStruct*);
-extern "C" menuCursorStruct* func_ovl8_8037D434(menuCursorStruct*);
-extern "C" void func_ovl8_8037726C(Vec2h*);
 extern "C" u32 func_ovl8_80377244(void);
-extern "C" void func_ovl8_8037D45C(void);
+extern "C" void func_ovl8_8037726C(Vec2h*);
 
 Unk80372790::Unk80372790() { func_ovl8_80373308(0); }
 

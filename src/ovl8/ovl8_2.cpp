@@ -1,4 +1,5 @@
 #include "ovl8/ovl8_2.hpp"
+#include "ovl8/ovl8_4.hpp"
 
 ovl8_803717E0::ovl8_803717E0() { func_ovl8_80371EA0(); }
 

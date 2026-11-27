@@ -1,4 +1,5 @@
 #include "ovl8/ovl8_7.hpp"
+#include "ovl8/ovl8_4.hpp"
 
 extern "C" void func_ovl8_8037B3E4(Sprite*);
 extern "C" Sprite* func_ovl8_8037ACAC(s32, s32, s32, s32, s32);

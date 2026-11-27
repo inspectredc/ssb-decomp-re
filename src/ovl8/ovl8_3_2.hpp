@@ -4,6 +4,7 @@
 #include "ovl8/ovl8_3.hpp"
 
 class Unk80372430 : public Unk80371FB0 {
+public:
     Unk80372430();
     Unk80372430(UnkA1* arg2, Unk80372790* arg3, Sprite* arg4);
     virtual ~Unk80372430();

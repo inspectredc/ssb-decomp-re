@@ -1,5 +1,6 @@
 #include <db/debug.h>
 
+
 // ovl8
 extern DBMenuPosition* func_ovl8_803749BC(s32);
 extern void func_ovl8_80374A54(s32, DBMenu*);
@@ -24,10 +25,10 @@ u32 dDBMenuBGColor = GPACK_RGBA8888(0x00, 0x00, 0xFF, 0xFF);
 u32 dDBMenuBorderColor = GPACK_RGBA8888(0x80, 0xFF, 0xFF, 0xFF);
 
 // 0x80369F6C
-u32 dDBMenuTextColor = GPACK_RGBA8888(0xFF, 0xFF, 0xFF, 0xFF);
+SYColorRGBA dDBMenuTextColor = { 0xFF, 0xFF, 0xFF, 0xFF };
 
 // 0x80369F70
-u32 dDBMenuTextBGColor[/* */] = { GPACK_RGBA8888(0x00, 0x00, 0xFF, 0xFF), GPACK_RGBA8888(0x00, 0x00, 0xFF, 0xFF), GPACK_RGBA8888(0xFF, 0xFF, 0xFF, 0xFF) };
+SYColorRGBA dDBMenuTextBGColor[/* */] = { { 0x00, 0x00, 0xFF, 0xFF }, { 0x00, 0x00, 0xFF, 0xFF }, { 0xFF, 0xFF, 0xFF, 0xFF } };
 
 // 0x80369F7C
 DBMenu dDBMenuArray[/* */] = { 
@@ -667,7 +668,7 @@ void dbMenuDestroyMenu(void)
 void dbMenuInitMenu(void)
 {
 	DBTextBuffer tb;
-	s32 sp18[5];
+	Unk8038FB90 sp18;
 
 	tb.font_buffer = sDBMenuFontBuffer;
 	tb.font_buffer_size = ARRAY_COUNT(sDBMenuFontBuffer);
@@ -679,11 +680,11 @@ void dbMenuInitMenu(void)
 	func_ovl8_8037D9D0(&dDBMenuTextColor);
 	func_ovl8_8037D9B4(dDBMenuTextBGColor);
 
-	func_ovl8_8037D95C(sp18);
+	func_ovl8_8037D95C(&sp18);
 
-	sp18[0] = 4;
+	sp18.unk0 = 4;
 
-	func_ovl8_8037D908(sp18);
+	func_ovl8_8037D908(&sp18);
 
 	gDBMenuIsMenuOpen = FALSE;
 }

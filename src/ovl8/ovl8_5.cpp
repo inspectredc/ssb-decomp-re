@@ -1,4 +1,7 @@
 #include "ovl8/ovl8_2.hpp"
+#include "ovl8/ovl8_4.hpp"
+#include "ovl8/ovl8_5.hpp"
+#include "ovl8/ovl8_13.hpp"
 
 extern "C"
 {
@@ -201,23 +204,6 @@ void Unk80372790_Unk28::func_ovl8_80373BD4(s32 arg1, s32 arg2, s32 arg3, Vec2h* 
 {
 	this->func_ovl8_80373BC0(arg1, arg2, arg3, arg4);
 }
-
-class Unk80373C10 : public Unk80372790_Unk28
-{
-  public:
-	Unk80373C10();
-	Unk80373C10(UnkA1* arg1, Unk80372790* arg2);
-	virtual ~Unk80373C10();
-
-	virtual s32 func_ovl8_80373828(menuCursorStruct* arg1); // func_ovl8_80373E24
-	virtual s32 func_ovl8_8037383C(menuCursorStruct* arg1); // func_ovl8_80373EA8
-	virtual void func_ovl8_803743C0(u16 arg1);
-	void func_ovl8_803743CC(u16 arg1);
-	virtual void func_ovl8_80373BC0(s32 arg1, s32 arg2, s32 arg3, Vec2h* arg4); // func_ovl8_803743D8
-
-  protected:
-	u16 unk3C;
-};
 
 Unk80373C10::Unk80373C10() { func_ovl8_803743CC(0); }
 
