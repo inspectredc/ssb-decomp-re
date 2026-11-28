@@ -1,4 +1,5 @@
 #include "ovl8/ovl8_13.hpp"
+#include "ovl8/ovl8_13_2.hpp"
 
 extern "C" {
 #include <sys/controller.h>
@@ -7,7 +8,6 @@ extern "C" {
 extern "C" void func_ovl8_80377134(SYColorRGBA*, s32);
 extern "C" void func_ovl8_8037726C(Vec2h*);
 extern "C" void func_ovl8_803798A0(Sprite* sprite, u8* dst, s32 dst_w, s32 dst_h, Vec2h* pos, s32 arg5);
-extern "C" void func_ovl8_8037DFF8(Sprite *sprite, u16 width, u16 height, u8 left_trim, u8 right_trim, u8 *src_buffer, u8 *dst_buffer, f32 alpha_blend);
 
 GObj* D_ovl8_8038A860 = NULL;
 s16 D_ovl8_8038A864 = 16;

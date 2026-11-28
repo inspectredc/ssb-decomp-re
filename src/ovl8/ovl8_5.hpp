@@ -48,9 +48,8 @@ public:
     void (*ovl85unk2C)(Unk80372790_Unk28*);
 };
 
-class Unk80373C10 : public Unk80372790_Unk28
-{
-  public:
+class Unk80373C10 : public Unk80372790_Unk28 {
+public:
 	Unk80373C10();
 	Unk80373C10(UnkA1* arg1, Unk80372790* arg2);
 	virtual ~Unk80373C10();
@@ -61,7 +60,7 @@ class Unk80373C10 : public Unk80372790_Unk28
 	void func_ovl8_803743CC(u16 arg1);
 	virtual void func_ovl8_80373BC0(s32 arg1, s32 arg2, s32 arg3, Vec2h* arg4);
 
-  protected:
+protected:
 	u16 unk3C;
 };
 

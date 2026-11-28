@@ -44,11 +44,15 @@ menuCursorStruct* func_ovl8_8037D3AC(menuCursorStruct*);
 menuCursorStruct* func_ovl8_8037D3DC(menuCursorStruct*);
 menuCursorStruct* func_ovl8_8037D434(menuCursorStruct*);
 void func_ovl8_8037D45C(void);
+extern "C" void func_ovl8_8037D908(Unk8038FB90*);
+extern "C" void func_ovl8_8037D95C(Unk8038FB90*);
 void func_ovl8_8037D990(s32);
-extern "C" void func_ovl8_8037D9D0(SYColorRGBA*);
 extern "C" void func_ovl8_8037D9B4(SYColorRGBA*);
+extern "C" void func_ovl8_8037D9D0(SYColorRGBA*);
 void func_ovl8_8037D9EC(u16, u16);
 void func_ovl8_8037D99C(s32);
 void func_ovl8_8037D9A8(s32);
+
+void func_ovl8_8037DAA0(Sprite* arg0, u8 arg1);
 
 #endif // _OVL8_13_H
